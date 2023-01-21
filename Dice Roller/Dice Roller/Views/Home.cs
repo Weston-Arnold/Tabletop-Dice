@@ -39,10 +39,10 @@ namespace Dice_Roller
             D_Num.SelectedIndex = 0;
 
             var quantityToolTip = new ToolTip();
-            quantityToolTip.SetToolTip(D_Num, "Number of Dice to be rolled");
+            quantityToolTip.SetToolTip(D_Num, "Quantity of specified die to be rolled");
 
             var modifierToolTip = new ToolTip();
-            modifierToolTip.SetToolTip(D_Mod, "Stat modifiers to be applied");
+            modifierToolTip.SetToolTip(D_Mod, "Modifier to be applied to the result");
         }
 
         public string Dice_Roller(int sides)
@@ -72,41 +72,46 @@ namespace Dice_Roller
             Res_Log_Box.Text = null;
         }
 
-        private void AppendLogEntry(TextBox target, string text, int sides)
+        private void AppendLogEntry(string text)
         {
-            target.Text = Dice_Roller(sides);
             Res_Log_Box.AppendText(text);
             Res_Log_Box.AppendText(Environment.NewLine);
         }
 
         private void D20_Roll_Click(object sender, EventArgs e)
         {
-            AppendLogEntry(D20_Result, $"D20: {D20_Result.Text} ({DateTime.Now:h:mm:ss tt})", 20);
+            D20_Result.Text = Dice_Roller(20);
+            AppendLogEntry($"D20: {D20_Result.Text} ({DateTime.Now:h:mm:ss tt})");
         }
 
         private void D12_Roll_Click(object sender, EventArgs e)
         {
-            AppendLogEntry(D12_Result, $"D12: {D12_Result.Text} ({DateTime.Now:h:mm:ss tt})", 12);
+            D12_Result.Text = Dice_Roller(12);
+            AppendLogEntry($"D12: {D12_Result.Text} ({DateTime.Now:h:mm:ss tt})");
         }
 
         private void D10_Roll_Click(object sender, EventArgs e)
         {
-            AppendLogEntry(D10_Result, $"D10: {D10_Result.Text} ({DateTime.Now:h:mm:ss tt})", 10);
+            D10_Result.Text = Dice_Roller(10);
+            AppendLogEntry($"D10: {D10_Result.Text} ({DateTime.Now:h:mm:ss tt})");
         }
 
         private void D8_Roll_Click(object sender, EventArgs e)
         {
-            AppendLogEntry(D8_Result, $"D8: {D8_Result.Text} ({DateTime.Now:h:mm:ss tt})", 8);
+            D8_Result.Text = Dice_Roller(8);
+            AppendLogEntry($"D8: {D8_Result.Text} ({DateTime.Now:h:mm:ss tt})");
         }
 
         private void D6_Roll_Click(object sender, EventArgs e)
         {
-            AppendLogEntry(D6_Result, $"D6: {D6_Result.Text} ({DateTime.Now:h:mm:ss tt})", 6);
+            D6_Result.Text = Dice_Roller(6);
+            AppendLogEntry($"D6: {D6_Result.Text} ({DateTime.Now:h:mm:ss tt})");
         }
 
         private void D4_Roll_Click(object sender, EventArgs e)
         {
-            AppendLogEntry(D4_Result, $"D4: {D4_Result.Text} ({DateTime.Now:h:mm:ss tt})", 4);
+            D4_Result.Text = Dice_Roller(4);
+            AppendLogEntry($"D4: {D4_Result.Text} ({DateTime.Now:h:mm:ss tt})");
         }
 
         public void ParseSelectedValues()
