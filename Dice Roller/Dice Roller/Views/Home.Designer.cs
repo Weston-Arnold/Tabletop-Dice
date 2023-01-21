@@ -259,7 +259,7 @@
             this.clear.TabIndex = 27;
             this.clear.Text = "Clear";
             this.clear.UseVisualStyleBackColor = true;
-            this.clear.Click += new System.EventHandler(this.clear_Click);
+            this.clear.Click += new System.EventHandler(this.Clear_LastResult_Click);
             // 
             // Res_Log_Box
             // 
@@ -316,7 +316,7 @@
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "Home";
             this.Text = "Dice Roller";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.Home_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
